@@ -29,6 +29,7 @@ slides:
     date: 5. Mai 2021
     title: Kausalität und Kausales Schliessen
     reference_scene: dict
+    sl_pages:
       -
         sid : 0
         textid: kaus1
