@@ -34,7 +34,7 @@ slides:
         textid: kaus1
         pageid: 3
         annot : ```
-          Erste Folien
+          First slides in markdown. Additional markdown keys allow extensions such as bibliography, crossrefs and internal linking.
           ```
 
 ```
