@@ -66,15 +66,21 @@
 <li><a href="https://github.com/toml-lang/toml/blob/v0.5.0/README.md">TOML Definition</a></li>
 </ul>
 <h3 id="102-yaml"><span class="pheasant-header"><span class="header"><span class="number">1.0.2</span> <span class="title">yaml</span></span></span></h3>
-<p>The file format is a human readable file format equivalent to JSON data structures. </p>
+<p>The file format is a human readable file format equivalent to JSON data structures.</p>
 <h2 id="11-slides"><span class="pheasant-header"><span class="header"><span class="number">1.1</span> <span class="title">slides</span></span></span></h2>
 <p>The annotation group <em>slides</em> is defined for presentation annotations to texts. Additional functions provide forward and backward presentation.</p>
 <div class="pheasant-fenced-code"><div class="cached"><div class="cell jupyter input"><div class="code"><pre><code class="">slides:
-  sid = 0
-  author = Gerd Graßhoff
-  annot = &#39;&#39;&#39;
-    Erste Folien
-    &#39;&#39;&#39;
+    author : Gerd Graßhoff
+    date: 5. Mai 2021
+    title: Kausalität und Kausales Schliessen
+    reference_scene: dict
+      -
+        sid : 0
+        textid: kaus1
+        pageid: 3
+        annot : ```
+          Erste Folien
+          ```
 </code></pre></div>
 <div class="report"><p><span class="count">[1]</span>
 <span class="start"></span> (<span class="time"></span>)
