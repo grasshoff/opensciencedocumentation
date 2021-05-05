@@ -1,0 +1,51 @@
+site_name: OpenScienceTools
+nav:
+  - Into: index.md
+  - Scene: scene.md
+theme:
+  name: ivory
+  font:
+    text: Roboto
+  language: en
+  highlightjs: true
+  features:
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.tracking
+    - navigation.indexes
+    - toc.integrate
+  custom_checkbox: True
+  clickable_checkbox: True
+  google_analytics:
+    - UA-183396608-1
+    - auto
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - admonition
+  - toc:
+      toc_depth : 6
+  - pymdownx.highlight
+  - pymdownx.tasklist
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - markdown_blockdiag:
+      format: svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+    social:
+        - icon: material/home
+          link: http://grasshoff.github.io/gerdgrasshoff.net
+plugins:
+#  - search
+  - pheasant:
+      version: pheasant
+      nav_number: true
+#  - enumerate-headings
+#  - bibtex:
+#      bib_file: "Gerd.bib"
