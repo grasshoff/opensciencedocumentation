@@ -1,7 +1,6 @@
 site_name: OpenScienceTools
 nav:
-  - Into: index.md
-  - Scene: scene.md
+  - Annotation: annotation.md
 theme:
   name: ivory
   font:

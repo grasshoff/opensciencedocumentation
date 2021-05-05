@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <title>Scene &mdash; OpenScienceTools</title>
+    <title>Annotation &mdash; OpenScienceTools</title>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
@@ -34,14 +34,13 @@
             </div>
             <nav class="nav">
                 <ul class="root">
-                    <li class="toctree-l1"><a class="nav-item" href="..">Into</a></li>
-                    <li class="toctree-l1 current"><a class="nav-item current" href="./">Scene</a>
+                    <li class="toctree-l1 current"><a class="nav-item current" href="./">Annotation</a><a class="nav-item current" href="./">Annotation</a>
 <ul class="subnav">
+<li class="toctree-l2"><a class="nav-item toc" href="#011-toml">0.1.1 toml</a></li>
 </ul></li>
                 </ul>
             </nav>
             <div class="repo">
-    <div class="previous"><a href="..">&laquo; Previous</a></div>
 </div>
         </aside>
         <div id="spacer"><button class="arrow"></button></div>
@@ -57,11 +56,16 @@
 </ul>
 </nav>
                 <div id="content">
-<h1 id="2-scenes"><span class="pheasant-header"><span class="header"><span class="number">2</span> <span class="title">scenes</span></span></span></h1></div>
+<h2 id="01-annotation"><span class="pheasant-header"><span class="header"><span class="number">0.1</span> <span class="title">annotation</span></span></span></h2>
+<p>Annotations can be created in different text formats of JSON, yaml, toml. These should be machine-readable and contain the annotation structure as json objects (lists of dictionaries).</p>
+<h3 id="011-toml"><span class="pheasant-header"><span class="header"><span class="number">0.1.1</span> <span class="title">toml</span></span></span></h3>
+<p>The file format intends to create a simple UTF8 structured, easy to read text file for data entry.</p>
+<ul>
+<li><a href="https://github.com/toml-lang/toml/blob/v0.5.0/README.md">TOML Definition</a></li>
+</ul>
+<h2 id="02-slides"><span class="pheasant-header"><span class="header"><span class="number">0.2</span> <span class="title">slides</span></span></span></h2>
+<p>The annotation group <em>slides</em> for presenting annotations to texts.</p></div>
                 <footer>
-    <div class="footer-buttons">
-        <div class="previous"><a href=".." title="Into"><span>Previous</span></a></div>
-    </div>
     <div class="footer-note">
         <p>
             Built with <a href="http://www.mkdocs.org">MkDocs</a> using
