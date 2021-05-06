@@ -2,7 +2,7 @@ site_name: OpenScienceTools
 nav:
   - Annotation: annotation.md
 theme:
-  name: ivory
+  name: material
   font:
     text: Roboto
   language: en
@@ -42,9 +42,9 @@ extra:
           link: http://grasshoff.github.io/gerdgrasshoff.net
 plugins:
 #  - search
-  - pheasant:
-      version: pheasant
-      nav_number: true
+#  - pheasant:
+#      version: pheasant
+#pip install mkdocs-ivory      nav_number: true
 #  - enumerate-headings
 #  - bibtex:
 #      bib_file: "Gerd.bib"
