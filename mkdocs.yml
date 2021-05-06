@@ -2,7 +2,7 @@ site_name: OpenScienceTools
 nav:
   - Annotation: annotation.md
 theme:
-  name: material
+  name: ivory
   font:
     text: Roboto
   language: en
