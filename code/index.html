@@ -636,18 +636,6 @@
 
       <p>Import works</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/scholarium.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span><span class="p">(</span><span class="n">allow_output_mutation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">loaddBook</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Import works</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">dfdBook</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/openrepo/sources/pdfRep.json&quot;</span>
-    <span class="n">reg</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/openrepo/sources/euler_reg.json&quot;</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">dfdBook</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">reg</span><span class="p">))</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -670,60 +658,6 @@
 
       <p>Old version für display of book</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/scholarium.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Reader</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Old version für display of book</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">state</span> <span class="o">=</span> <span class="n">declareState</span><span class="p">(</span>
-        <span class="s1">&#39;pages&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s2">&quot;off&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;highlight&#39;</span><span class="p">:</span> <span class="s2">&quot;euler&quot;</span><span class="p">,</span> <span class="s1">&#39;document&#39;</span><span class="p">:</span> <span class="s2">&quot;Goldbach&quot;</span><span class="p">})</span>
-    <span class="n">page</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">]</span>
-    <span class="n">off</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;off&#39;</span><span class="p">]</span>
-
-    <span class="c1"># st.sidebar.subheader(&quot;NEXT/BACK&quot;)</span>
-    <span class="n">left_column</span><span class="p">,</span> <span class="n">right_column</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_columns</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    <span class="k">with</span> <span class="n">left_column</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s1">&#39;back&#39;</span><span class="p">):</span>
-            <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">-</span><span class="mi">1</span>
-    <span class="k">with</span> <span class="n">right_column</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s1">&#39;next&#39;</span><span class="p">):</span>
-            <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">+</span><span class="mi">1</span>
-
-    <span class="c1">#### euler collection</span>
-    <span class="n">db</span><span class="p">,</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">loaddBook</span><span class="p">()</span>
-    <span class="n">eexp2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;volume&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">eexp2</span><span class="p">:</span>
-     <span class="c1">#   collection = st.selectbox(&quot;collection&quot;, [&quot;eulerOO&quot;])</span>
-        <span class="n">collection</span> <span class="o">=</span> <span class="s2">&quot;eulerOO&quot;</span>
-        <span class="n">df</span><span class="p">,</span> <span class="n">lbook</span> <span class="o">=</span> <span class="n">outdB</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">collection</span><span class="p">)</span>
-        <span class="n">lbook</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reg</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
-        <span class="n">book</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="n">lbook</span><span class="p">,</span> <span class="n">format_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">eulvol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">dictbook</span><span class="p">,</span> <span class="n">regbook</span> <span class="o">=</span> <span class="n">makedictbook</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">book</span><span class="p">)</span>
-        <span class="n">off</span> <span class="o">=</span> <span class="n">regbook</span><span class="p">[</span><span class="s2">&quot;off&quot;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">book</span><span class="p">:</span>
-            <span class="n">page</span> <span class="o">=</span> <span class="n">regbook</span><span class="p">[</span><span class="s2">&quot;titelp&quot;</span><span class="p">]</span>
-     <span class="c1">#       page = titlepage[book]</span>
-            <span class="n">state</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">book</span>
-
-    <span class="c1">## Page</span>
-    <span class="n">exp1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">exp1</span><span class="p">:</span>
-        <span class="n">exp2</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">page</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">select_slider</span><span class="p">(</span>
-            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dictbook</span><span class="p">[</span><span class="s2">&quot;npag&quot;</span><span class="p">]),</span> <span class="n">value</span><span class="o">=</span><span class="n">page</span><span class="p">,</span> <span class="n">format_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;page &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">off</span><span class="p">))</span>
-
-    <span class="n">cite1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;cite&quot;</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">cite1</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">truepage</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">off</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">euvol</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">eulvol</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Euler Opera Omnia &quot;</span><span class="p">,</span> <span class="n">euvol</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="s2">&quot;, p.&quot;</span><span class="p">,</span> <span class="n">truepage</span><span class="p">(</span><span class="n">page</span><span class="p">))</span>
-
-    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">page</span>
-    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;off&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">off</span>
-    <span class="n">displaydBook</span><span class="p">(</span><span class="n">dictbook</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">])</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -775,31 +709,6 @@
 <h4 id="Code.sqltools.activeToken--returns">Returns</h4>
 <p>str/None: token or None if not registered </p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">activeToken</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Returns the token, the current sessionID is registered to.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    str/None: token or None if not registered </span>
-
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
-        <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/user.db&#39;</span><span class="p">)</span>
-        <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-        <span class="n">active_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
-        <span class="n">sessionID</span> <span class="o">=</span> <span class="n">_getSessionID</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">active_tokens</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">sessionID</span> <span class="o">==</span> <span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">activetoken</span> <span class="o">=</span> <span class="n">token</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">return</span> <span class="n">activetoken</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -826,30 +735,6 @@ type: dict</p>
 <h4 id="Code.sqltools.addRegToSceneList--returns">Returns</h4>
 <p>list: new scene dictionary</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">addRegToSceneList</span><span class="p">(</span><span class="n">sceneList</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Adds Registry to the scene dictionary, if the current sessionID is not</span>
-<span class="sd">    registered to a token.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ---------- </span>
-<span class="sd">    sceneDict: dictionary of scenes and associated scene functions </span>
-<span class="sd">    type: dict</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    list: new scene dictionary</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">sceneList</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sceneList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Registry&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">sceneList</span>
-        <span class="k">return</span> <span class="n">sceneList</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -876,31 +761,6 @@ type: dict</p>
 <h4 id="Code.sqltools.addRegToScenes--returns">Returns</h4>
 <p>list: new scene dictionary</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">addRegToScenes</span><span class="p">(</span><span class="n">sceneDict</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Adds Registry to the scene dictionary, if the current sessionID is not</span>
-<span class="sd">    registered to a token.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ---------- </span>
-<span class="sd">    sceneDict: dictionary of scenes and associated scene functions </span>
-<span class="sd">    type: dict</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    list: new scene dictionary</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
-        <span class="n">sceneDict</span><span class="p">[</span><span class="s1">&#39;Auswertung&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">statScene</span>
-        <span class="k">return</span> <span class="n">sceneDict</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sceneDict</span><span class="p">[</span><span class="s1">&#39;Registry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">regScene</span>
-        <span class="k">return</span> <span class="n">sceneDict</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -929,34 +789,6 @@ type: dict</p>
 <h4 id="Code.sqltools.declareState--returns">Returns</h4>
 <p>dict: State-Dictionary</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">declareState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">defaultState</span><span class="p">,</span><span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">]):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Returns a default State-Dictionary if the User is not logged in or hasn&#39;t saved a state yet.</span>
-<span class="sd">    Returns the result of ther loadState function of a given table.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: table name that should be loaded from token.db</span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    defaultState: default return if nothing is saved or user isn&#39;t logged in</span>
-<span class="sd">    type: dict</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    dict: State-Dictionary</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">loginState</span><span class="p">()</span> <span class="ow">and</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">getTables</span><span class="p">():</span>
-        <span class="k">return</span> <span class="n">loadState</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">loadAdmin</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[]:</span>
-        <span class="k">return</span> <span class="n">loadAdmin</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">defaultState</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -979,27 +811,6 @@ type: dict</p>
 <h4 id="Code.sqltools.getTables--returns">Returns</h4>
 <p>list: list of table names</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">getTables</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Loads a list of all tables saved under a token</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    list: list of table names</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;&quot;</span><span class="p">)</span>
-    <span class="n">flatten</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span>
-    <span class="n">all_tables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()))</span>
-    <span class="k">return</span> <span class="n">all_tables</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1027,35 +838,6 @@ type: str</p>
 <h4 id="Code.sqltools.loadGlobalAnnot--returns">Returns</h4>
 <p>list: list of dictionaries containing a row each</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">page</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Load all information stored in a table saved under a token</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: name of the table to be loaded</span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    list: list of dictionaries containing a row each</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/Doc_&#39;</span><span class="o">+</span><span class="n">doc</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM Page_&#39;</span><span class="o">+</span><span class="n">page</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">output</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1081,36 +863,6 @@ type: str</p>
 <h4 id="Code.sqltools.loadState--returns">Returns</h4>
 <p>dict: dictionary, keys are table headers, values are row information</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadState</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Loads the last saved row of a table saved under a token</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: name of the table to be loaded</span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    dict: dictionary, keys are table headers, values are row information</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM &#39;</span><span class="o">+</span><span class="n">table</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">_findType</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">output</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1136,36 +888,6 @@ type: str</p>
 <h4 id="Code.sqltools.loadTable--returns">Returns</h4>
 <p>list: list of dictionaries containing a row each</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadTable</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Load all information stored in a table saved under a token</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: name of the table to be loaded</span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    list: list of dictionaries containing a row each</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM &#39;</span><span class="o">+</span><span class="n">table</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">output</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1188,27 +910,6 @@ type: str</p>
 <h4 id="Code.sqltools.loginState--returns">Returns</h4>
 <p>bool: True if User is registered, False if not</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loginState</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Checks if the current session ID is registered to a token. </span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    bool: True if User is registered, False if not</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/user.db&#39;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="n">active_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">_getSessionID</span><span class="p">()</span> <span class="ow">in</span> <span class="n">active_ids</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1242,61 +943,6 @@ type: bool</p>
 <h4 id="Code.sqltools.saveGlobalAnnot--returns">Returns</h4>
 <p>st.write:</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">saveGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">page</span><span class="p">,</span><span class="n">save_var</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Saves dictionary into a specified table in the database associated with the registered token.</span>
-<span class="sd">    Creates the table on the first save. Table head is build from the save_var keys.</span>
-<span class="sd">    Adds date and time stamps when savong data.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: name of the table data is to be saved in </span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    save_var: Dictionary of variables to be saved</span>
-<span class="sd">    type: dict</span>
-
-<span class="sd">    overwrite: optional (default: True), overwrites table if True, append data if False</span>
-<span class="sd">    type: bool</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    st.write:</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="c1"># create sql connection</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/Doc_&#39;</span><span class="o">+</span><span class="n">doc</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-    <span class="c1"># check if table exists, create if it doesn&#39;t</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">table_keys_start</span> <span class="o">=</span> <span class="s1">&#39;(date text, time text, token text,&#39;</span>
-        <span class="n">table_keys_end</span> <span class="o">=</span> <span class="s1">&#39;)&#39;</span>
-        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-            <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; text,&#39;</span>
-        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">table_keys</span> <span class="o">=</span> <span class="n">table_keys_start</span><span class="o">+</span><span class="n">table_keys_mid</span><span class="o">+</span><span class="n">table_keys_end</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">table_keys</span><span class="p">)</span>
-        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-
-    <span class="c1"># write date into table</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="n">day</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
-    <span class="n">time</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-    <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
-    <span class="n">keylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">day</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">token</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO Page_&#39;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s1">&#39; VALUES &#39;</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;?&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">keylen</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">vals</span><span class="p">,))</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1328,76 +974,6 @@ type: bool</p>
 <h4 id="Code.sqltools.saveState--returns">Returns</h4>
 <p>st.write:</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">saveState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">save_var</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Saves dictionary into a specified table in the database associated with the registered token.</span>
-<span class="sd">    Creates the table on the first save. Table head is build from the save_var keys.</span>
-<span class="sd">    Adds date and time stamps when savong data.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    table: name of the table data is to be saved in </span>
-<span class="sd">    type: str</span>
-
-<span class="sd">    save_var: Dictionary of variables to be saved</span>
-<span class="sd">    type: dict</span>
-
-<span class="sd">    overwrite: optional (default: True), overwrites table if True, append data if False</span>
-<span class="sd">    type: bool</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    st.write:</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
-        <span class="c1"># get active token</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;admin&#39;</span>
-
-    <span class="c1">#delete time/day token </span>
-    <span class="n">save_var</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    <span class="n">save_var</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-    <span class="c1"># create sql connection</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-    <span class="c1"># check if table exists, create if it doesn&#39;t</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;&quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">table_keys_start</span> <span class="o">=</span> <span class="s1">&#39;(date text, time text,&#39;</span>
-        <span class="n">table_keys_end</span> <span class="o">=</span> <span class="s1">&#39;)&#39;</span>
-        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-            <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; blob,&#39;</span>
-        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">table_keys</span> <span class="o">=</span> <span class="n">table_keys_start</span><span class="o">+</span><span class="n">table_keys_mid</span><span class="o">+</span><span class="n">table_keys_end</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE &quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">table_keys</span><span class="p">)</span>
-        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-
-    <span class="c1"># delete table if overwrite == True</span>
-    <span class="k">if</span> <span class="n">overwrite</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;DELETE FROM &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">pass</span>
-
-    <span class="c1"># write date into table</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;&quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
-    <span class="n">day</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
-    <span class="n">time</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-    <span class="n">keylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
-    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">day</span><span class="p">,</span><span class="n">time</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO &#39;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s1">&#39; VALUES &#39;</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;?&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">keylen</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">vals</span><span class="p">,))</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
@@ -1426,58 +1002,6 @@ Updates user.db according to the token.yml </p>
 <p>tokenlist: of no token.yml exists, listelements define the first tokens in yaml and db
 type: list</p>
 
-        <details class="quote">
-          <summary>Source code in <code>Code/sqltools.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">userAdmin</span><span class="p">(</span><span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">]):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Creates necessary folder structure for logging in and saving data (registry folder) </span>
-<span class="sd">    Creates ./registry/tokens.yaml </span>
-<span class="sd">    Creates .registry/user.db</span>
-<span class="sd">    Updates user.db according to the token.yml </span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    tokenlist: of no token.yml exists, listelements define the first tokens in yaml and db</span>
-<span class="sd">    type: list</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="c1"># create registry folder</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;./registry&#39;</span><span class="p">):</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;./registry&#39;</span><span class="p">)</span>
-
-    <span class="c1"># creates token yaml file</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">):</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">y</span><span class="p">:</span>
-            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokenlist</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="c1"># setup SQL-connection</span>
-    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/user.db&#39;</span><span class="p">)</span>
-    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-
-    <span class="c1"># create users table in sql database, update tokens</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;users&#39;&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tok</span><span class="p">:</span>
-            <span class="n">tokens</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">tok</span><span class="p">,</span> <span class="n">Loader</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
-        <span class="n">active_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
-        <span class="n">missing_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">active_tokens</span><span class="p">]</span>
-        <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">missing_tokens</span><span class="p">:</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users VALUES (&#39;&quot;</span><span class="o">+</span><span class="n">tok</span><span class="o">+</span><span class="s2">&quot;&#39;,&#39; &#39;)&quot;</span><span class="p">)</span>
-        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE users (token text, sessionID text)&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokenlist</span><span class="p">:</span>
-            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users VALUES (&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&#39;,&#39; &#39;)&quot;</span><span class="p">)</span>
-        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-
-    <span class="c1">#close SQL connection</span>
-    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-        </details>
     </div>
 
   </div>
