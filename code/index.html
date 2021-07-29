@@ -1,0 +1,1570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="http://grasshoff.college/causa/code/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+    
+    
+      
+        <title>Code - scholarium</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe914879.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modules-for-scholarium" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="scholarium" class="md-header__button md-logo" aria-label="scholarium" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            scholarium
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="scholarium" class="md-nav__button md-logo" aria-label="scholarium" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    scholarium
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotation/" class="md-nav__link">
+        anNote
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libraries/" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Code
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Code.scholarium" class="md-nav__link">
+    Code.scholarium
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.scholarium.loaddBook" class="md-nav__link">
+    loaddBook()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.scholarium.Reader" class="md-nav__link">
+    Reader()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqltools-for-causa" class="md-nav__link">
+    Sqltools for causa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools" class="md-nav__link">
+    Code.sqltools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.activeToken" class="md-nav__link">
+    activeToken()
+  </a>
+  
+    <nav class="md-nav" aria-label="activeToken()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.activeToken--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToSceneList" class="md-nav__link">
+    addRegToSceneList()
+  </a>
+  
+    <nav class="md-nav" aria-label="addRegToSceneList()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToSceneList--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToSceneList--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToScenes" class="md-nav__link">
+    addRegToScenes()
+  </a>
+  
+    <nav class="md-nav" aria-label="addRegToScenes()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToScenes--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.addRegToScenes--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.declareState" class="md-nav__link">
+    declareState()
+  </a>
+  
+    <nav class="md-nav" aria-label="declareState()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.declareState--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.declareState--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.getTables" class="md-nav__link">
+    getTables()
+  </a>
+  
+    <nav class="md-nav" aria-label="getTables()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.getTables--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.loadGlobalAnnot" class="md-nav__link">
+    loadGlobalAnnot()
+  </a>
+  
+    <nav class="md-nav" aria-label="loadGlobalAnnot()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadGlobalAnnot--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadGlobalAnnot--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.loadState" class="md-nav__link">
+    loadState()
+  </a>
+  
+    <nav class="md-nav" aria-label="loadState()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadState--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadState--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.loadTable" class="md-nav__link">
+    loadTable()
+  </a>
+  
+    <nav class="md-nav" aria-label="loadTable()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadTable--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loadTable--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.loginState" class="md-nav__link">
+    loginState()
+  </a>
+  
+    <nav class="md-nav" aria-label="loginState()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.loginState--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.saveGlobalAnnot" class="md-nav__link">
+    saveGlobalAnnot()
+  </a>
+  
+    <nav class="md-nav" aria-label="saveGlobalAnnot()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.saveGlobalAnnot--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.saveGlobalAnnot--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.saveState" class="md-nav__link">
+    saveState()
+  </a>
+  
+    <nav class="md-nav" aria-label="saveState()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.saveState--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.saveState--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Code.sqltools.userAdmin" class="md-nav__link">
+    userAdmin()
+  </a>
+  
+    <nav class="md-nav" aria-label="userAdmin()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Code.sqltools.userAdmin--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="modules-for-scholarium">Modules for Scholarium</h1>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="Code.scholarium"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.scholarium.loaddBook" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">loaddBook</span><span class="p">()</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Import works</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/scholarium.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@st</span><span class="o">.</span><span class="n">cache</span><span class="p">(</span><span class="n">allow_output_mutation</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">loaddBook</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Import works</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">dfdBook</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/openrepo/sources/pdfRep.json&quot;</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="s2">&quot;/Volumes/openrepo/sources/euler_reg.json&quot;</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">dfdBook</span><span class="p">),</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">reg</span><span class="p">))</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.scholarium.Reader" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">Reader</span><span class="p">()</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Old version für display of book</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/scholarium.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">Reader</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Old version für display of book</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">declareState</span><span class="p">(</span>
+        <span class="s1">&#39;pages&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s2">&quot;off&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;highlight&#39;</span><span class="p">:</span> <span class="s2">&quot;euler&quot;</span><span class="p">,</span> <span class="s1">&#39;document&#39;</span><span class="p">:</span> <span class="s2">&quot;Goldbach&quot;</span><span class="p">})</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">]</span>
+    <span class="n">off</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;off&#39;</span><span class="p">]</span>
+
+    <span class="c1"># st.sidebar.subheader(&quot;NEXT/BACK&quot;)</span>
+    <span class="n">left_column</span><span class="p">,</span> <span class="n">right_column</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_columns</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="k">with</span> <span class="n">left_column</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s1">&#39;back&#39;</span><span class="p">):</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">with</span> <span class="n">right_column</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s1">&#39;next&#39;</span><span class="p">):</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">+</span><span class="mi">1</span>
+
+    <span class="c1">#### euler collection</span>
+    <span class="n">db</span><span class="p">,</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">loaddBook</span><span class="p">()</span>
+    <span class="n">eexp2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;volume&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">eexp2</span><span class="p">:</span>
+     <span class="c1">#   collection = st.selectbox(&quot;collection&quot;, [&quot;eulerOO&quot;])</span>
+        <span class="n">collection</span> <span class="o">=</span> <span class="s2">&quot;eulerOO&quot;</span>
+        <span class="n">df</span><span class="p">,</span> <span class="n">lbook</span> <span class="o">=</span> <span class="n">outdB</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">collection</span><span class="p">)</span>
+        <span class="n">lbook</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reg</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;book&quot;</span><span class="p">,</span> <span class="n">lbook</span><span class="p">,</span> <span class="n">format_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">eulvol</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">dictbook</span><span class="p">,</span> <span class="n">regbook</span> <span class="o">=</span> <span class="n">makedictbook</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="n">book</span><span class="p">)</span>
+        <span class="n">off</span> <span class="o">=</span> <span class="n">regbook</span><span class="p">[</span><span class="s2">&quot;off&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">book</span><span class="p">:</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="n">regbook</span><span class="p">[</span><span class="s2">&quot;titelp&quot;</span><span class="p">]</span>
+     <span class="c1">#       page = titlepage[book]</span>
+            <span class="n">state</span><span class="p">[</span><span class="s2">&quot;document&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">book</span>
+
+    <span class="c1">## Page</span>
+    <span class="n">exp1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">exp1</span><span class="p">:</span>
+        <span class="n">exp2</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">select_slider</span><span class="p">(</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dictbook</span><span class="p">[</span><span class="s2">&quot;npag&quot;</span><span class="p">]),</span> <span class="n">value</span><span class="o">=</span><span class="n">page</span><span class="p">,</span> <span class="n">format_func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;page &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">off</span><span class="p">))</span>
+
+    <span class="n">cite1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">beta_expander</span><span class="p">(</span><span class="s2">&quot;cite&quot;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">cite1</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">truepage</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">off</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">euvol</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">eulvol</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Euler Opera Omnia &quot;</span><span class="p">,</span> <span class="n">euvol</span><span class="p">(</span><span class="n">book</span><span class="p">),</span> <span class="s2">&quot;, p.&quot;</span><span class="p">,</span> <span class="n">truepage</span><span class="p">(</span><span class="n">page</span><span class="p">))</span>
+
+    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">page</span>
+    <span class="n">state</span><span class="p">[</span><span class="s1">&#39;off&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">off</span>
+    <span class="n">displaydBook</span><span class="p">(</span><span class="n">dictbook</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="s1">&#39;page&#39;</span><span class="p">])</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+<h2 id="sqltools-for-causa">Sqltools for causa</h2>
+
+
+  <div class="doc doc-object doc-module">
+
+<a id="Code.sqltools"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.activeToken" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">activeToken</span><span class="p">()</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns the token, the current sessionID is registered to.</p>
+<h4 id="Code.sqltools.activeToken--returns">Returns</h4>
+<p>str/None: token or None if not registered </p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">activeToken</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns the token, the current sessionID is registered to.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str/None: token or None if not registered </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
+        <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/user.db&#39;</span><span class="p">)</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">active_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
+        <span class="n">sessionID</span> <span class="o">=</span> <span class="n">_getSessionID</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">active_tokens</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">sessionID</span> <span class="o">==</span> <span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">activetoken</span> <span class="o">=</span> <span class="n">token</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">return</span> <span class="n">activetoken</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.addRegToSceneList" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">addRegToSceneList</span><span class="p">(</span><span class="n">sceneList</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds Registry to the scene dictionary, if the current sessionID is not
+registered to a token.</p>
+<h4 id="Code.sqltools.addRegToSceneList--parameters">Parameters</h4>
+<p>sceneDict: dictionary of scenes and associated scene functions 
+type: dict</p>
+<h4 id="Code.sqltools.addRegToSceneList--returns">Returns</h4>
+<p>list: new scene dictionary</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">addRegToSceneList</span><span class="p">(</span><span class="n">sceneList</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Adds Registry to the scene dictionary, if the current sessionID is not</span>
+<span class="sd">    registered to a token.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ---------- </span>
+<span class="sd">    sceneDict: dictionary of scenes and associated scene functions </span>
+<span class="sd">    type: dict</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list: new scene dictionary</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">sceneList</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sceneList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Registry&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">sceneList</span>
+        <span class="k">return</span> <span class="n">sceneList</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.addRegToScenes" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">addRegToScenes</span><span class="p">(</span><span class="n">sceneDict</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds Registry to the scene dictionary, if the current sessionID is not
+registered to a token.</p>
+<h4 id="Code.sqltools.addRegToScenes--parameters">Parameters</h4>
+<p>sceneDict: dictionary of scenes and associated scene functions 
+type: dict</p>
+<h4 id="Code.sqltools.addRegToScenes--returns">Returns</h4>
+<p>list: new scene dictionary</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">addRegToScenes</span><span class="p">(</span><span class="n">sceneDict</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Adds Registry to the scene dictionary, if the current sessionID is not</span>
+<span class="sd">    registered to a token.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ---------- </span>
+<span class="sd">    sceneDict: dictionary of scenes and associated scene functions </span>
+<span class="sd">    type: dict</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list: new scene dictionary</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
+        <span class="n">sceneDict</span><span class="p">[</span><span class="s1">&#39;Auswertung&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">statScene</span>
+        <span class="k">return</span> <span class="n">sceneDict</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sceneDict</span><span class="p">[</span><span class="s1">&#39;Registry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">regScene</span>
+        <span class="k">return</span> <span class="n">sceneDict</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.declareState" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">declareState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">defaultState</span><span class="p">,</span> <span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">])</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns a default State-Dictionary if the User is not logged in or hasn't saved a state yet.
+Returns the result of ther loadState function of a given table.</p>
+<h4 id="Code.sqltools.declareState--parameters">Parameters</h4>
+<p>table: table name that should be loaded from token.db
+type: str</p>
+<p>defaultState: default return if nothing is saved or user isn't logged in
+type: dict</p>
+<h4 id="Code.sqltools.declareState--returns">Returns</h4>
+<p>dict: State-Dictionary</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">declareState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">defaultState</span><span class="p">,</span><span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">]):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Returns a default State-Dictionary if the User is not logged in or hasn&#39;t saved a state yet.</span>
+<span class="sd">    Returns the result of ther loadState function of a given table.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: table name that should be loaded from token.db</span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    defaultState: default return if nothing is saved or user isn&#39;t logged in</span>
+<span class="sd">    type: dict</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict: State-Dictionary</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">loginState</span><span class="p">()</span> <span class="ow">and</span> <span class="n">table</span> <span class="ow">in</span> <span class="n">getTables</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">loadState</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">loadAdmin</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">!=</span> <span class="p">[]:</span>
+        <span class="k">return</span> <span class="n">loadAdmin</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">defaultState</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.getTables" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">getTables</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Loads a list of all tables saved under a token</p>
+<h4 id="Code.sqltools.getTables--returns">Returns</h4>
+<p>list: list of table names</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">getTables</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Loads a list of all tables saved under a token</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list: list of table names</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT name FROM sqlite_master WHERE type=&#39;table&#39;;&quot;</span><span class="p">)</span>
+    <span class="n">flatten</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span>
+    <span class="n">all_tables</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()))</span>
+    <span class="k">return</span> <span class="n">all_tables</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.loadGlobalAnnot" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">loadGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Load all information stored in a table saved under a token</p>
+<h4 id="Code.sqltools.loadGlobalAnnot--parameters">Parameters</h4>
+<p>table: name of the table to be loaded
+type: str</p>
+<h4 id="Code.sqltools.loadGlobalAnnot--returns">Returns</h4>
+<p>list: list of dictionaries containing a row each</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">page</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Load all information stored in a table saved under a token</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: name of the table to be loaded</span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list: list of dictionaries containing a row each</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/Doc_&#39;</span><span class="o">+</span><span class="n">doc</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM Page_&#39;</span><span class="o">+</span><span class="n">page</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.loadState" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">loadState</span><span class="p">(</span><span class="n">table</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Loads the last saved row of a table saved under a token</p>
+<h4 id="Code.sqltools.loadState--parameters">Parameters</h4>
+<p>table: name of the table to be loaded
+type: str</p>
+<h4 id="Code.sqltools.loadState--returns">Returns</h4>
+<p>dict: dictionary, keys are table headers, values are row information</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadState</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Loads the last saved row of a table saved under a token</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: name of the table to be loaded</span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict: dictionary, keys are table headers, values are row information</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM &#39;</span><span class="o">+</span><span class="n">table</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">_findType</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.loadTable" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">loadTable</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Load all information stored in a table saved under a token</p>
+<h4 id="Code.sqltools.loadTable--parameters">Parameters</h4>
+<p>table: name of the table to be loaded
+type: str</p>
+<h4 id="Code.sqltools.loadTable--returns">Returns</h4>
+<p>list: list of dictionaries containing a row each</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loadTable</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">token</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Load all information stored in a table saved under a token</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: name of the table to be loaded</span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list: list of dictionaries containing a row each</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">row_factory</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Row</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM &#39;</span><span class="o">+</span><span class="n">table</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()]</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.loginState" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">loginState</span><span class="p">()</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Checks if the current session ID is registered to a token. </p>
+<h4 id="Code.sqltools.loginState--returns">Returns</h4>
+<p>bool: True if User is registered, False if not</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">loginState</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Checks if the current session ID is registered to a token. </span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool: True if User is registered, False if not</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/user.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">active_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">_getSessionID</span><span class="p">()</span> <span class="ow">in</span> <span class="n">active_ids</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.saveGlobalAnnot" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">saveGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">save_var</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Saves dictionary into a specified table in the database associated with the registered token.
+Creates the table on the first save. Table head is build from the save_var keys.
+Adds date and time stamps when savong data.</p>
+<h4 id="Code.sqltools.saveGlobalAnnot--parameters">Parameters</h4>
+<p>table: name of the table data is to be saved in 
+type: str</p>
+<p>save_var: Dictionary of variables to be saved
+type: dict</p>
+<p>overwrite: optional (default: True), overwrites table if True, append data if False
+type: bool</p>
+<h4 id="Code.sqltools.saveGlobalAnnot--returns">Returns</h4>
+<p>st.write:</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">saveGlobalAnnot</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span><span class="n">page</span><span class="p">,</span><span class="n">save_var</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Saves dictionary into a specified table in the database associated with the registered token.</span>
+<span class="sd">    Creates the table on the first save. Table head is build from the save_var keys.</span>
+<span class="sd">    Adds date and time stamps when savong data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: name of the table data is to be saved in </span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    save_var: Dictionary of variables to be saved</span>
+<span class="sd">    type: dict</span>
+
+<span class="sd">    overwrite: optional (default: True), overwrites table if True, append data if False</span>
+<span class="sd">    type: bool</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    st.write:</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># create sql connection</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/Doc_&#39;</span><span class="o">+</span><span class="n">doc</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="c1"># check if table exists, create if it doesn&#39;t</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">table_keys_start</span> <span class="o">=</span> <span class="s1">&#39;(date text, time text, token text,&#39;</span>
+        <span class="n">table_keys_end</span> <span class="o">=</span> <span class="s1">&#39;)&#39;</span>
+        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; text,&#39;</span>
+        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">table_keys</span> <span class="o">=</span> <span class="n">table_keys_start</span><span class="o">+</span><span class="n">table_keys_mid</span><span class="o">+</span><span class="n">table_keys_end</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">table_keys</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># write date into table</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;Page_&quot;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
+    <span class="n">keylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">day</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">token</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO Page_&#39;</span><span class="o">+</span><span class="n">page</span><span class="o">+</span><span class="s1">&#39; VALUES &#39;</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;?&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">keylen</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">vals</span><span class="p">,))</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.saveState" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">saveState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">save_var</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Saves dictionary into a specified table in the database associated with the registered token.
+Creates the table on the first save. Table head is build from the save_var keys.
+Adds date and time stamps when savong data.</p>
+<h4 id="Code.sqltools.saveState--parameters">Parameters</h4>
+<p>table: name of the table data is to be saved in 
+type: str</p>
+<p>save_var: Dictionary of variables to be saved
+type: dict</p>
+<p>overwrite: optional (default: True), overwrites table if True, append data if False
+type: bool</p>
+<h4 id="Code.sqltools.saveState--returns">Returns</h4>
+<p>st.write:</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">saveState</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="n">save_var</span><span class="p">,</span><span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Saves dictionary into a specified table in the database associated with the registered token.</span>
+<span class="sd">    Creates the table on the first save. Table head is build from the save_var keys.</span>
+<span class="sd">    Adds date and time stamps when savong data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    table: name of the table data is to be saved in </span>
+<span class="sd">    type: str</span>
+
+<span class="sd">    save_var: Dictionary of variables to be saved</span>
+<span class="sd">    type: dict</span>
+
+<span class="sd">    overwrite: optional (default: True), overwrites table if True, append data if False</span>
+<span class="sd">    type: bool</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    st.write:</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">loginState</span><span class="p">():</span>
+        <span class="c1"># get active token</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">activeToken</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;admin&#39;</span>
+
+    <span class="c1">#delete time/day token </span>
+    <span class="n">save_var</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">save_var</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># create sql connection</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;registry/&#39;</span><span class="o">+</span><span class="n">token</span><span class="o">+</span><span class="s1">&#39;.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="c1"># check if table exists, create if it doesn&#39;t</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;&quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">table_keys_start</span> <span class="o">=</span> <span class="s1">&#39;(date text, time text,&#39;</span>
+        <span class="n">table_keys_end</span> <span class="o">=</span> <span class="s1">&#39;)&#39;</span>
+        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; blob,&#39;</span>
+        <span class="n">table_keys_mid</span> <span class="o">=</span> <span class="n">table_keys_mid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">table_keys</span> <span class="o">=</span> <span class="n">table_keys_start</span><span class="o">+</span><span class="n">table_keys_mid</span><span class="o">+</span><span class="n">table_keys_end</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE &quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">table_keys</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># delete table if overwrite == True</span>
+    <span class="k">if</span> <span class="n">overwrite</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;DELETE FROM &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># write date into table</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;&quot;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+    <span class="n">keylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">day</span><span class="p">,</span><span class="n">time</span><span class="p">]</span><span class="o">+</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">save_var</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO &#39;</span><span class="o">+</span><span class="n">table</span><span class="o">+</span><span class="s1">&#39; VALUES &#39;</span><span class="o">+</span><span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;?&#39;</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">keylen</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">vals</span><span class="p">,))</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="Code.sqltools.userAdmin" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">userAdmin</span><span class="p">(</span><span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">])</span></code>
+
+
+</h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Creates necessary folder structure for logging in and saving data (registry folder) 
+Creates ./registry/tokens.yaml 
+Creates .registry/user.db
+Updates user.db according to the token.yml </p>
+<h4 id="Code.sqltools.userAdmin--parameters">Parameters</h4>
+<p>tokenlist: of no token.yml exists, listelements define the first tokens in yaml and db
+type: list</p>
+
+        <details class="quote">
+          <summary>Source code in <code>Code/sqltools.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">userAdmin</span><span class="p">(</span><span class="n">tokenlist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;admin&#39;</span><span class="p">]):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Creates necessary folder structure for logging in and saving data (registry folder) </span>
+<span class="sd">    Creates ./registry/tokens.yaml </span>
+<span class="sd">    Creates .registry/user.db</span>
+<span class="sd">    Updates user.db according to the token.yml </span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tokenlist: of no token.yml exists, listelements define the first tokens in yaml and db</span>
+<span class="sd">    type: list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># create registry folder</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;./registry&#39;</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;./registry&#39;</span><span class="p">)</span>
+
+    <span class="c1"># creates token yaml file</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">,</span><span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">y</span><span class="p">:</span>
+            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tokenlist</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># setup SQL-connection</span>
+    <span class="n">con</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;./registry/user.db&#39;</span><span class="p">)</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="c1"># create users table in sql database, update tokens</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(name) FROM sqlite_master WHERE type=&#39;table&#39; AND name=&#39;users&#39;&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span> 
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./registry/token.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tok</span><span class="p">:</span>
+            <span class="n">tokens</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">tok</span><span class="p">,</span> <span class="n">Loader</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+        <span class="n">active_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users&#39;</span><span class="p">)]</span>
+        <span class="n">missing_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">active_tokens</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">missing_tokens</span><span class="p">:</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users VALUES (&#39;&quot;</span><span class="o">+</span><span class="n">tok</span><span class="o">+</span><span class="s2">&quot;&#39;,&#39; &#39;)&quot;</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE users (token text, sessionID text)&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokenlist</span><span class="p">:</span>
+            <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO users VALUES (&#39;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;&#39;,&#39; &#39;)&quot;</span><span class="p">)</span>
+        <span class="n">con</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1">#close SQL connection</span>
+    <span class="n">con</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../libraries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Libraries" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Libraries
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="http://grasshoff.github.io/gerdgrasshoff.net" target="_blank" rel="noopener" title="grasshoff.github.io" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs.sticky", "navigation.sections", "navigation.tracking", "navigation.indexes", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>

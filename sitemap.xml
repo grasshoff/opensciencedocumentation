@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2021-07-20</lastmod>
+         <loc>http://grasshoff.college/causa/annotation/</loc>
+         <lastmod>2021-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://grasshoff.college/causa/code/</loc>
+         <lastmod>2021-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://grasshoff.college/causa/collections/</loc>
+         <lastmod>2021-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://grasshoff.college/causa/frontend/</loc>
+         <lastmod>2021-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://grasshoff.college/causa/libraries/</loc>
+         <lastmod>2021-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://grasshoff.college/causa/panes/</loc>
+         <lastmod>2021-07-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
